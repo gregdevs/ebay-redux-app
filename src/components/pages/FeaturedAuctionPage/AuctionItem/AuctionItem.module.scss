@@ -1,0 +1,15 @@
+
+.auctionItem{
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px #c4c4c4;
+    &:hover{
+        cursor: pointer;
+        background: #eee;
+    }
+
+
+}
+

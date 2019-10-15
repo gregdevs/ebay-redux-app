@@ -1,0 +1,2 @@
+export const SEARCH_FOR_ITEMS = "SEARCH_FOR_ITEMS";
+export const GET_FEATURED_ITEM  = "GET_FEATURED_ITEM";

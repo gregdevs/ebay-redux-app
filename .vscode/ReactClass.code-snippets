@@ -1,0 +1,19 @@
+{
+    "New React Class Component": {
+        "scope": "",
+        "prefix": "NewReactClassComponent",
+        "body": [
+           
+            "import React from 'react'",
+
+            "\n$0class MyComponent extends React.Component {",
+                    "\t$0constructor(props){",
+					"\t\t$0super(props)",
+					"\t$0}",
+			"\n$0}"
+
+        ],
+        "description": "Create Boilerplate React Class"
+    }
+}
+
