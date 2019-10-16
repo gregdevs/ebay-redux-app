@@ -4,6 +4,7 @@ import { getItem } from '../../../actions';
 import { CURRENT_ITEM } from '../../../actions/actionTypes';
 import { itemParser } from '../../../helpers';
 import AuctionItem  from '../../common/AuctionItem';
+import { Link } from "react-router-dom";
 
 class ItemDetailPage extends React.Component {
     constructor(props){
@@ -25,6 +26,7 @@ class ItemDetailPage extends React.Component {
 
         return(
             <React.Fragment>
+                <Link to={`/`}> &lt; Back to Landing Page</Link>
                 <h1>Item Detail</h1>
                 <AuctionItem linkoff={true} currentPrice={ currentItemDetail.currentPrice }  modType={'featured'} id={currentItemDetail.id} imageSrc={currentItemDetail.imageSrc} title={ currentItemDetail.title } condition={ currentItemDetail.conditionDisplayName } timeLeft={ currentItemDetail.timeLeft }  />
             </React.Fragment>

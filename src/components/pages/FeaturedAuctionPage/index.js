@@ -71,7 +71,7 @@ class FeaturedAuctionPage extends React.Component {
                const type = Object.keys(btn).toString();
                const val = Object.values(btn);
                    return( 
-                    <button className={styles.button} onClick={() => this.sortBy(type)}> {val} </button>
+                    <button key={val} className={styles.button} onClick={() => this.sortBy(type)}> {val} </button>
                    )
                 });
 

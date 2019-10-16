@@ -3,11 +3,10 @@ const request = require('request');
 
 module.exports = function(app) {
     app.get('/api/findItemsAdvanced', function (req, res) {
-        var queryData = req.query;//url.parse(req.originalUrl, true).query;
+        var queryData = req.query;
         if (queryData){
             const keywords = queryData && queryData.keywords,
                   sortBy = queryData && queryData.sortBy;
-                  console.log(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=GregAtri-Discover-PRD-5b31bb683-45be06e8&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${keywords}&descriptionSearch=true&sortOrder=${sortBy}`)
             request({
                 url: `https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsAdvanced&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=GregAtri-Discover-PRD-5b31bb683-45be06e8&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=${keywords}&descriptionSearch=true&sortOrder=${sortBy}`  
             }).on('error', function(e) {
