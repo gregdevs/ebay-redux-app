@@ -21,4 +21,4 @@ Available Paths:
 
 `/item/featured/{keywords}` - a little bonus I threw in;
 
-*Ebay API had cors issues, so I had to take some time to create a proxy to get the data**
+*Ebay API had cors issues, so I had to take some time to create a proxy to get the data (setupProxy.js)**
