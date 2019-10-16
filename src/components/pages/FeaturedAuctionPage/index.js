@@ -4,7 +4,7 @@ import AuctionItem from '../../common/AuctionItem';
 import FeatureModule from './FeatureModule';
 import RelatedModule from './RelatedModule';
 import { connect } from 'react-redux';
-import { itemParser } from '../../../helpers';
+import { itemParser, handleLocalSort } from '../../../helpers';
 import styles from './FeaturedAuctionPage.module.scss';
 import { GET_ITEMS, SORT_BY } from '../../../actions/actionTypes';
 import { BUTTONS_MAP } from '../../../constants';
@@ -19,19 +19,6 @@ class FeaturedAuctionPage extends React.Component {
         if (!this.props.featuredItem){
             this.handleGetItemAction('EndTimeSoonest');
         }
-    }
-
-    handleLocalSort = (sortType, parsedItems) => {
-        if (sortType === 'alpha'){
-            parsedItems.sort((a, b) => a.title.localeCompare(b.title));
-        } 
-        else if (sortType === 'reversealpha'){
-            parsedItems.sort((a, b) => b.title.localeCompare(a.title));
-        }     
-        else if (sortType === 'lowhigh') {                   
-            parsedItems.reverse();
-        }  
-        return parsedItems;      
     }
 
     handleGetItemAction = (sortByType) => {
@@ -59,7 +46,7 @@ class FeaturedAuctionPage extends React.Component {
             related_items_markup;
 
             if (typeof parsedItems !== 'undefined' && parsedItems){
-                related_items_markup = this.handleLocalSort(sortType, parsedItems).map( (rItem, ix) => {
+                related_items_markup = handleLocalSort(sortType, parsedItems).map( (rItem, ix) => {
                     return (
                         <li key={`${rItem.id}-${ix}`}>
                             <AuctionItem  currentPrice={ rItem.currentPrice }  modType={'related'} id={rItem.id} imageSrc={rItem.imageSrc} title={ rItem.title } condition={ rItem.conditionDisplayName } timeLeft={ rItem.timeLeft }  />

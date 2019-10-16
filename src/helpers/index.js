@@ -36,3 +36,17 @@ export const itemParser = (featuredItem) => {
 
     return obj;
 }
+
+
+export const handleLocalSort = (sortType, parsedItems) => {
+    if (sortType === 'alpha'){
+        parsedItems.sort((a, b) => a.title.localeCompare(b.title));
+    } 
+    else if (sortType === 'reversealpha'){
+        parsedItems.sort((a, b) => b.title.localeCompare(a.title));
+    }     
+    else if (sortType === 'lowhigh') {                   
+        parsedItems.reverse();
+    }  
+    return parsedItems;      
+}
