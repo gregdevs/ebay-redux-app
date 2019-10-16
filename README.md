@@ -22,6 +22,8 @@ Available Paths:
 
 `/item/featured/{keywords}` - a little bonus I threw in;
 
+Click on an item from `/` to navigate to the Item Detail page. 
+
 *Ebay API had cors issues, so I had to take some time to create a proxy to get the data (setupProxy.js)**
 
 ### Enhancements
