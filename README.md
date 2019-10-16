@@ -1,4 +1,5 @@
 Discovery Test - SPA
+<img width="1762" alt="Screen Shot 2019-10-16 at 11 54 54 AM" src="https://user-images.githubusercontent.com/3936775/66936584-f65b5d00-f00b-11e9-9e6d-f7bd516ec9bc.png">
 
 ## Available Scripts
 
