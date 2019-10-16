@@ -1,10 +1,9 @@
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import getFeaturedItemReducer from  '../reducers/getFeaturedItemReducer';
-
+import getItemsReducer from  '../reducers/getItemsReducer';
 
 const rootReducer = combineReducers({
-    ebayResults: getFeaturedItemReducer
+    ebayResults: getItemsReducer
 });
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

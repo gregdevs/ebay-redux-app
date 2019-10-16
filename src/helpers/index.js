@@ -22,17 +22,17 @@ export const itemParser = (featuredItem) => {
         obj;
 
         obj = {
-        largeImage,
-        imageSrc,
-        id,
-        title,
-        condition,
-        conditionDisplayName,
-        listingInfo,
-        endTime,
-        timeLeft,
-        currentPrice
-    }
+            largeImage,
+            imageSrc,
+            id,
+            title,
+            condition,
+            conditionDisplayName,
+            listingInfo,
+            endTime,
+            timeLeft,
+            currentPrice
+        }
 
     return obj;
 }

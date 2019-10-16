@@ -1,2 +1,3 @@
-export const SEARCH_FOR_ITEMS = "SEARCH_FOR_ITEMS";
-export const GET_FEATURED_ITEM  = "GET_FEATURED_ITEM";
+export const GET_ITEMS  = "GET_ITEMS";
+export const CURRENT_ITEM = "CURRENT_ITEM";
+export const SORT_BY = "SORT_BY";

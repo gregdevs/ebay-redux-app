@@ -1,19 +1,21 @@
-import { SEARCH_FOR_ITEMS, GET_FEATURED_ITEM }  from './actionTypes';
+import { GET_ITEMS, CURRENT_ITEM }  from './actionTypes';
+
 import { FIND_API_BASE } from '../constants';
 
-export const searchForTodos = (keywords) => async dispatch => {
-    const req = await fetch(`${FIND_API_BASE}?keywords=${keywords}`);
-    const res = await req.json()
-
+export const setSort = ( args, type ) => dispatch => {
+    const { sortType } = args;
+    
     dispatch({
-        type: SEARCH_FOR_ITEMS,
-        payload: res
-    })
+        type: type,
+        payload: {sortType}
+    });
 }
 
-export const getFeaturedItem = ( keywords ) => async dispatch => {
-    const res = await fetch(`${FIND_API_BASE}?keywords=${keywords}`);
-    
+export const getItem = ( args, type ) => async dispatch => {
+    var obj;
+    const { keywords, sortBy, sortType  } = args
+    const res = await fetch(`${FIND_API_BASE}?keywords=${keywords}&sortBy=${sortBy}`);
+
     if (res.status >= 400) {
         throw new Error("Bad response from server");
     }
@@ -27,15 +29,27 @@ export const getFeaturedItem = ( keywords ) => async dispatch => {
     const randomIndex = Math.floor(Math.random() * itemsLength) + 1;
     const featuredItem = item[randomIndex] || null;
     
-
-    var ebayResults = {
-        featuredItem: featuredItem,
-        relatedItems: item
+    if (type === GET_ITEMS && sortBy === 'EndTimeSoonest'){
+        obj = {
+            featuredItem: featuredItem,
+            relatedItems: item,
+            sortType: sortType
+        }
+    }  
+    else if (type === GET_ITEMS && sortBy !== 'EndTimeSoonest') {
+        obj = {
+            relatedItems: item,
+            sortType: sortType
+        }
     }
-    // console.log(resJson)
+    else if (type === CURRENT_ITEM){
+        obj = {
+            currentItem: item[0],
+        }       
+    }
 
     dispatch({
-        type: GET_FEATURED_ITEM,
-        payload: ebayResults
+        type: type,
+        payload: obj
     })
 }
