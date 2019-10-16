@@ -30,15 +30,15 @@ If given more time, I would have done the following:
 
 -declare default/propTypes (I added them in one  component);
 
-- write unit tests for components;
+-write unit tests for components;
 
 -add in a loader so on any network requests for data, or state changes ,the loader will display . until the request fulfills and the components render with new state;
 
 -I feel like I can always clean up redux flow to no end..lol;
 
-- spend some time tweaking the UI from a css perspective;
+-spend some time tweaking the UI from a css perspective;
 
-- add prettier to the app so on save, the editor will automatically format the code;
+-add prettier to the app so on save, the editor will automatically format the code;
 
 -potentially clean up the proxy
 
