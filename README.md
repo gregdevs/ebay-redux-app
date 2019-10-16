@@ -32,6 +32,8 @@ If given more time, I would have done the following:
 
 -write unit tests for components;
 
+-general code cleanup; check for duplication, see what other pieces of markup that is shared could be componetized
+
 -add in a loader so on any network requests for data, or state changes ,the loader will display . until the request fulfills and the components render with new state;
 
 -I feel like I can always clean up redux flow to no end..lol;
