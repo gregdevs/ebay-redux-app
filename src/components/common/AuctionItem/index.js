@@ -1,5 +1,7 @@
 import React from 'react';
-import Image from '../Image';
+//import Image from '../Image';
+import CommonMarkup from '../CommonMarkup';
+
 import propTypes from 'prop-types';
 import AuctionDetail from '../../common/AuctionDetail';
 import styles from './AuctionItem.module.scss';
@@ -14,13 +16,21 @@ const AuctionItem = ( props ) => {
             {!linkoff ?  (
                 <Link to={`/item/${id}`}>
                     <div className={`${styles.auctionItem}`}>              
-                        <Image imageSrc={ imageSrc } modType={modType}/>
+                        <CommonMarkup render= {() => (
+                            <div className={`${styles.imageWrapper}  ${styles[modType]}`}>
+                                <img src={ imageSrc }/>
+                            </div>                       
+                        )}/>
                         <AuctionDetail title={title} condition={condition} timeLeft={timeLeft} currentPrice={currentPrice}/>
                     </div> 
                 </Link> 
             ) : (
-                <div className={`${styles.auctionItem}`}>              
-                    <Image imageSrc={ imageSrc } modType={modType}/>
+                <div className={`${styles.auctionItem}`}>  
+                        <CommonMarkup render= {() => (
+                            <div className={`${styles.imageWrapper}  ${styles[modType]}`}>
+                                <img src={ imageSrc }/>
+                            </div>                       
+                        )}/>                            
                     <AuctionDetail title={title} condition={condition} timeLeft={timeLeft} currentPrice={currentPrice}/>
                 </div> 
             )    
