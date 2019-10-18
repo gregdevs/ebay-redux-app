@@ -35,7 +35,7 @@ If given more time, I would have done the following:
 
 -write unit tests for components;
 
--use HOC where/if necessary
+-use HOC where/if necessary, explore implementing Hooks
 
 -general code cleanup; check for duplication, see what other pieces of markup that is shared could be componetized
 
