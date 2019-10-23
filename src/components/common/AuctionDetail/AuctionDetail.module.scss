@@ -1,0 +1,23 @@
+.auctionList{
+    text-align: left;
+    list-style: none;
+    padding: 0;
+
+    .condition {
+        font-weight: bold;
+    }
+}
+
+.title{
+    color: #000;
+    font-weight: bold;
+}
+.sm{
+    font-size:12px;
+}
+.md{
+    font-size:16px;
+}
+.lg{
+    font-size:22px;
+}
