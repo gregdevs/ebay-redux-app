@@ -8,7 +8,7 @@ In the project directory, you can run:
 ### `npm start`
 
 
-** you will need to sign up for an ebay developers account.
+** you will need to sign up for an ebay developers account. https://developer.ebay.com/
 Once you have access simply provide your Ebay production AppName in setupProxy.js in the . {APPNAME} in the request url
 
 Runs the app in the development mode.<br />
